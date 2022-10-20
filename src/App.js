@@ -88,41 +88,6 @@ useEffect(() => {
                         <hr/>
                         </>
                           )}
-                        
-                        
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="media">
-                                    <a class="pull-left" href="#">
-                                        <img class="media-object img-circle img-chat" src="https://bootdey.com/img/Content/avatar/avatar6.png" alt=""/>
-                                    </a>
-                                    <div class="media-body">
-                                        <h4 class="media-heading">John Smith
-                                            <span class="small pull-right">12:28 PM</span>
-                                        </h4>
-                                        <p>Yeah I did. Everything looks good.</p>
-                                        <p>Did you have an update on purchase order #302?</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <hr/>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="media">
-                                    <a class="pull-left" href="#">
-                                        <img class="media-object img-circle img-chat" src="https://bootdey.com/img/Content/avatar/avatar6.png" alt=""/>
-                                    </a>
-                                    <div class="media-body">
-                                        <h4 class="media-heading">Jane Smith
-                                            <span class="small pull-right">12:39 PM</span>
-                                        </h4>
-                                        <p>No not yet, the transaction hasn't cleared yet. I will let you know as soon as everything goes through. Any idea where you want to get lunch today?</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <hr/>
                     </div>
                     
                     <div class="portlet-footer">
