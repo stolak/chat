@@ -18,10 +18,15 @@ const sendChat= ()=>{
   }
 }
 useEffect(() => {
-  const chats = JSON.parse(localStorage.getItem('chats'));
-  if (chats) {
-    setChats(chats);
-  }
+  
+  const interval = setInterval(() => {
+    const chats = JSON.parse(localStorage.getItem('chats'));
+    if (chats) {
+      setChats(chats);
+    }
+  }, 1000);
+
+  return () => clearInterval(interval);
 }, []);
   return (
     <div class="container bootstrap snippets bootdey">
