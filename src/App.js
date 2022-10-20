@@ -69,11 +69,7 @@ useEffect(() => {
                 {user && 
                 <div id="chat" class="panel-collapse collapse in">
                     <div class="portlet-body chat-widget">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <p class="text-center text-muted small">January 1, 2014 at 12:23 PM</p>
-                            </div>
-                        </div>
+                        
                         {chats.map(chat =><>
                           <div class="row">
                             <div class="col-lg-12">
