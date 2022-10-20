@@ -3,18 +3,18 @@ import React, { useState ,useEffect} from 'react';
 
 
 function App() {
-//   const [chats, setChats] = useState([{ id: 1, names: 'Frank1', message: 'Hi, I wanted to make sure you got the latest product report. Did Roddy get it to you?', dateTime: '12:28 PM', picture: 'https://bootdey.com/img/Content/avatar/avatar1.png' },
-//   { id: 2, names: 'Frank2', message: 'Hi2, I wanted to make sure you got the latest product report. Did Roddy get it to you?', dateTime: '12:28 PM', picture: 'https://bootdey.com/img/Content/avatar/avatar1.png' },
-//   { id: 3, names: 'Frank3', message: 'Hi3, I wanted to make sure you got the latest product report. Did Roddy get it to you?', dateTime: '12:28 PM', picture: 'https://bootdey.com/img/Content/avatar/avatar1.png' },
-//   { id: 4, names: 'Frank4', message: 'Hi4, I wanted to make sure you got the latest product report. Did Roddy get it to you?', dateTime: '12:28 PM', picture: 'https://bootdey.com/img/Content/avatar/avatar1.png' },
-//   { id: 5, names: 'Frank5', message: 'Hi5, I wanted to make sure you got the latest product report. Did Roddy get it to you?', dateTime: '12:28 PM', picture: 'https://bootdey.com/img/Content/avatar/avatar1.png' },
-// ]);
-// useEffect(() => {
-//   localStorage.setItem('chats', JSON.stringify(chats));
-// }, [chats]);
 const [chats, setChats] = useState([]);
 const [user, setUser] = useState('');
 const [name, setName] = useState("");
+const [chat, setChat] = useState("");
+const sendChat= ()=>{
+  const currentdate = new Date();
+  const dateTime=  currentdate.getHours() + ":"  + currentdate.getMinutes() + ":" + currentdate.getSeconds();
+  const newchart = {names: name, message: chat, dateTime: dateTime, picture: 'https://bootdey.com/img/Content/avatar/avatar1.png' }
+  setChats(chats => [...chats, newchart]);
+  localStorage.setItem('chats', JSON.stringify(chats));
+  setChat('');
+}
 useEffect(() => {
   const chats = JSON.parse(localStorage.getItem('chats'));
   if (chats) {
@@ -126,15 +126,14 @@ useEffect(() => {
                     <div class="portlet-footer">
                         <form role="form">
                             <div class="form-group">
-                                <textarea class="form-control" placeholder="Enter message..."></textarea>
+                                <textarea class="form-control" placeholder="Enter message..."
+                                value={chat}
+                                onChange={(e) => setChat(e.target.value)}
+                                ></textarea>
                             </div>
                             <div class="form-group">
                                 <button type="button" class="btn btn-default pull-right" 
-                                onClick={() => {
-                                  setChats(chats => [...chats, { id: 2, names: 'stephen', message: 'Hi Stephen, I wanted to make sure you got the latest product report. Did Roddy get it to you?', dateTime: '12:28 PM', picture: 'https://bootdey.com/img/Content/avatar/avatar1.png' }]);
-                                  localStorage.setItem('chats', JSON.stringify(chats));
-                                }
-                                }
+                                onClick={(e) => sendChat() }
                                 >Send</button>
                                 <div class="clearfix"></div>
                             </div>
