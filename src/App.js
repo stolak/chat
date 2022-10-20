@@ -13,7 +13,7 @@ const sendChat= ()=>{
   const dateTime=  currentdate.getHours() + ":"  + currentdate.getMinutes() + ":" + currentdate.getSeconds();
   const newchart = {names: name, message: chat, dateTime: dateTime, picture: 'https://bootdey.com/img/Content/avatar/avatar1.png' }
   setChats(chats => [...chats, newchart]);
-  localStorage.setItem('chats', JSON.stringify(chats));
+  localStorage.setItem('chats', JSON.stringify([...chats, newchart]));
   setChat('');
   }
 }
