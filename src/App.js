@@ -8,12 +8,14 @@ const [user, setUser] = useState('');
 const [name, setName] = useState("");
 const [chat, setChat] = useState("");
 const sendChat= ()=>{
+  if(chat){
   const currentdate = new Date();
   const dateTime=  currentdate.getHours() + ":"  + currentdate.getMinutes() + ":" + currentdate.getSeconds();
   const newchart = {names: name, message: chat, dateTime: dateTime, picture: 'https://bootdey.com/img/Content/avatar/avatar1.png' }
   setChats(chats => [...chats, newchart]);
   localStorage.setItem('chats', JSON.stringify(chats));
   setChat('');
+  }
 }
 useEffect(() => {
   const chats = JSON.parse(localStorage.getItem('chats'));
