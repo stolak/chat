@@ -1,5 +1,5 @@
 import './App.css';
-import Chats from './Chats';
+import Chats from './components/Chats';
 import React, { useState ,useEffect} from 'react';
 
 
@@ -92,7 +92,7 @@ useEffect(() => {
             </div>
         </div>
     </div>
-</div>  
+  </div>  
   );
 }
 
